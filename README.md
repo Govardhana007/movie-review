@@ -27,7 +27,7 @@ Next steps (optional)
 - Add or Drop movies via the UI: click `Add Movie` (now "Add or Drop Movie") on `home.html`. Choose the action 'Add' to create a new movie or choose 'Drop' to remove a user-added movie. Dropping a movie also removes its local reviews.
 
 
-https://govardhana007.github.io/miniproject/
+
 
 PHP backend (optional)
 ----------------------
