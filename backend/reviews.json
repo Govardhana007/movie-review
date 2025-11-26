@@ -1,0 +1,49 @@
+{
+    "um1": [
+        {
+            "rating": 5,
+            "text": "wonderful movie",
+            "date": "2025-11-19T03:24:27+01:00"
+        },
+        {
+            "rating": 5,
+            "text": "wow",
+            "date": "2025-11-22T22:49:41+01:00"
+        }
+    ],
+    "u1763519174305548": [
+        {
+            "rating": 4,
+            "text": "good",
+            "date": "2025-11-19T03:26:26+01:00"
+        }
+    ],
+    "u1763535179393779": [
+        {
+            "rating": 5,
+            "text": "hiii",
+            "date": "2025-11-19T07:53:09+01:00"
+        }
+    ],
+    "u1763706596704695": [
+        {
+            "rating": 5,
+            "text": "hiiii",
+            "date": "2025-11-21T08:21:28+01:00"
+        }
+    ],
+    "u1763848118191174": [
+        {
+            "rating": 5,
+            "text": "aaa very fentastic movie",
+            "date": "2025-11-22T22:48:59+01:00"
+        }
+    ],
+    "u1763849184949301": [
+        {
+            "rating": 5,
+            "text": "wowwww \nOverall impression: brilliant, masterful, mediocre, forgettable, classic, epic",
+            "date": "2025-11-22T23:07:00+01:00"
+        }
+    ]
+}

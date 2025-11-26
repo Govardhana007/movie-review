@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Reviews</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page page--home">
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Movie <span>Reviews</span></h1>
+            <nav>
+                <a href="index.html" class="nav-link">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2 class="hero-title">Find & Share Honest Movie Reviews</h2>
+            <p class="hero-sub">Quick, simple and beautiful — add your review and help others decide.</p>
+        </section>
+        <section class="controls">
+            <input id="search" placeholder="Search movies by title..." />
+            <button id="add-review-btn">Add Review</button>
+            <button id="add-movie-btn">Add And Drop Movie</button>
+        </section>
+
+        <section id="movie-grid" class="movie-grid">
+            <!-- Movie cards rendered by script.js -->
+        </section>
+
+        <!-- Scroll section removed: Now Showing / Trending -->
+    </main>
+
+    <!-- Review modal -->
+    <div id="review-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">×</button>
+            <h2 id="modal-title">Add Review</h2>
+            <form id="review-form">
+                <label>
+                    Movie:
+                    <select id="movie-select"></select>
+                </label>
+                <label>
+                    Rating:
+                    <select id="rating-select">
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Very good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+                </label>
+                <label>
+                    Review:
+                    <textarea id="review-text" rows="4" placeholder="Write your thoughts..."></textarea>
+                </label>
+                <div class="modal-actions">
+                    <button type="submit" id="submit-review">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Movie modal -->
+    <div id="movie-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" id="close-movie-modal">×</button>
+            <h2>Add or Drop Movie</h2>
+            <form id="movie-form">
+                <div class="form-row">
+                    <label>
+                        <input type="radio" name="movie-action" value="add" id="action-add" checked /> Add
+                    </label>
+                    <label>
+                        <input type="radio" name="movie-action" value="drop" id="action-drop" /> Drop
+                    </label>
+                </div>
+                <!-- when drop is selected, pick an existing user-added movie to remove -->
+                <label id="drop-select-label" style="display:none;">
+                    Choose movie to drop:
+                    <select id="movie-drop-select"></select>
+                </label>
+                <div id="add-fields">
+                    <label>
+                        Title:
+                        <input id="movie-title" type="text" required />
+                    </label>
+                    <label>
+                        Year:
+                        <input id="movie-year" type="number" min="1888" max="2100" value="2024" />
+                    </label>
+                    <label>
+                        Poster (file):
+                        <input id="movie-poster-file" type="file" accept="image/*" />
+                    </label>
+                    <label>
+                        Poster name (optional):
+                        <input id="movie-poster-name" type="text" placeholder="Example: my-poster.jpg" />
+                    </label>
+                    <small class="form-note">Poster max size: 1.5 MB. If you omit a file, a placeholder image will be
+                        used.</small>
+                    <label>
+                        Short description:
+                        <textarea id="movie-desc" rows="3" placeholder="A short description"></textarea>
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" id="submit-movie">Add Movie</button>
+                </div>
+            </form>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

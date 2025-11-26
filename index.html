@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Movie Reviews</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page page--login">
+    <form id="login-form" class="form_main" action="#" method="post">
+        <p class="heading">Login</p>
+        <div class="inputContainer">
+            <input placeholder="Username" id="username" class="inputField" name="username" type="text" required>
+        </div>
+        <div class="inputContainer">
+            <input placeholder="Password" id="password" class="inputField" name="password" type="password" required>
+        </div>
+        <button id="button" type="submit">Submit</button>
+        <div class="signupContainer">
+            <p>Don't have an account?</p>
+            <a href="home.html">Continue as guest</a>
+        </div>
+    </form>
+    <script>
+        (function () {
+            const form = document.getElementById('login-form');
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value;
+                if (!username || !password) {
+                    alert('Please enter username and password');
+                    return;
+                }
+
+                try {
+                    const resp = await fetch('backend/user.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username: username, password: password, action: 'insert' })
+                    });
+                    const data = await resp.json();
+                    if (resp.ok && data && data.success) {
+                        // created or updated
+                        alert('Login/register successful. Redirecting...');
+                        window.location.href = 'home.html';
+                    } else {
+                        alert('Server error: ' + (data.error || JSON.stringify(data)));
+                    }
+                } catch (err) {
+                    console.error(err);
+                    alert('Network error communicating with server');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
